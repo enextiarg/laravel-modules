@@ -87,6 +87,13 @@ class $CLASS$ extends ServiceProvider
         } else {
             $this->loadTranslationsFrom(__DIR__ .'/../$PATH_LANG$', '$LOWER_NAME$');
         }
+        
+        if (is_dir($langPath)) {
+            $this->loadJsonTranslationsFrom($langPath,  '$LOWER_NAME$');
+        } else {
+            $this->loadJsonTranslationsFrom(__DIR__ .'/../$PATH_LANG$', '$LOWER_NAME$');
+        }
+
     }
 
     /**
